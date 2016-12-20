@@ -13,8 +13,7 @@ public class FilmService {
     private static final Logger LOGGER = Logger.getLogger(FilmService.class.getName());
 
     private final HashMap<Long, Film> films = new HashMap<>();
-    private final ArrayList<Film> filmsDelete = new ArrayList<>();
-    private final ArrayList<Film> filmsChange = new ArrayList<>();
+    private static ArrayList<Genre> genres = new ArrayList<>();
     private long nextId = 0;
 
     private FilmService() {
@@ -76,18 +75,21 @@ public class FilmService {
     }
 
     public void getDataFromDB() {
+        genres = MySQLService.getGenresFromDB();
         films.clear();
-        final ArrayList<Film> films = MySQLService.getFilmsFromDb();
+        final ArrayList<Film> films = MySQLService.getFilmsFromDB();
         for (Film film : films) {
             save(film);
         }
     }
 
-    public void saveFilmToDB(Film f) {
+    public void saveFilmToDB(Film f, String genreName) {
+        f.setGenreID(MySQLService.getGenreIdByName(genreName));
         MySQLService.saveFilmToDB(f);
     }
 
-    public void changeFilmInDB(Film f) {
+    public void changeFilmInDB(Film f, String genreName) {
+        f.setGenreID(MySQLService.getGenreIdByName(genreName));
         MySQLService.changeFilmsInDB(f);
     }
 

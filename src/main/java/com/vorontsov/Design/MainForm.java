@@ -22,7 +22,7 @@ public class MainForm extends VerticalLayout{
     public MainForm(MyUI myUI) {
         this.myUI = myUI;
         editingForm = new EditingForm(myUI, this);
-        grid.setColumns("id", "title", "duration", "ageRestrictions", "genreID", "rating");
+        grid.setColumns("id", "title", "genreName", "rating", "duration", "ageRestrictions");
         grid.setSizeFull();
 
         updateList();

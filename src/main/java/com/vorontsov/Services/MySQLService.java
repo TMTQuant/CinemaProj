@@ -2,6 +2,7 @@ package com.vorontsov.Services;
 
 import com.vaadin.ui.Notification;
 import com.vorontsov.Base.Film;
+import com.vorontsov.Base.Genre;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -18,9 +19,12 @@ public class MySQLService {
     private static ResultSet rs = null;
     private static boolean installed;
     private static boolean haveUser;
-    private static ArrayList films;
     private static boolean authorize;
     private static boolean haveFilm;
+    private static ArrayList films;
+    private static ArrayList genres;
+    private static int genreId;
+
 
     public static boolean isInstalled() {
         try {
@@ -206,13 +210,13 @@ public class MySQLService {
         }
     }
 
-    public static ArrayList<Film> getFilmsFromDb() {
+    public static ArrayList<Film> getFilmsFromDB() {
         try {
             films = new ArrayList();
             ic = new InitialContext();
             dataSource = (DataSource) ic.lookup("java:/cinemadb");
             connection = dataSource.getConnection();
-            PreparedStatement ps = connection.prepareStatement("SELECT * FROM films;");
+            PreparedStatement ps = connection.prepareStatement("SELECT `Films`.*,`Genre`.`Name` AS `GenreName` FROM `Films` LEFT JOIN `Genre` ON `Films`.`GenreID`=`Genre`.`ID`;");
             rs = ps.executeQuery();
             while (rs.next()) {
                 Film film = new Film();
@@ -222,6 +226,7 @@ public class MySQLService {
                 film.setAgeRestrictions(rs.getInt("ageRestrictions"));
                 film.setRating(rs.getDouble("Rating"));
                 film.setGenreID(rs.getLong("GenreID"));
+                film.setGenreName(rs.getString("GenreName"));
                 films.add(film);
             }
 
@@ -238,7 +243,36 @@ public class MySQLService {
                 }
             return films;
         }
+    }
 
+    public static ArrayList<Genre> getGenresFromDB() {
+        try {
+            genres = new ArrayList();
+            ic = new InitialContext();
+            dataSource = (DataSource) ic.lookup("java:/cinemadb");
+            connection = dataSource.getConnection();
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM genre;");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Genre genre = new Genre();
+                genre.setId(rs.getLong("ID"));
+                genre.setName(rs.getString("Name"));
+                genres.add(genre);
+            }
+
+        } catch (NamingException ne) {
+            ne.printStackTrace();
+        } catch (SQLException se) {
+            se.printStackTrace();
+        } finally {
+            if (connection != null)
+                try {
+                    connection.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            return genres;
+        }
     }
 
     public static boolean tryAuthorize(String username, String password) {
@@ -303,7 +337,6 @@ public class MySQLService {
 
     public static void saveFilmToDB(Film film) {
         try {
-            authorize = false;
             ic = new InitialContext();
             dataSource = (DataSource) ic.lookup("java:/cinemadb");
             connection = dataSource.getConnection();
@@ -331,7 +364,6 @@ public class MySQLService {
 
     public static void changeFilmsInDB(Film film) {
         try {
-            authorize = false;
             ic = new InitialContext();
             dataSource = (DataSource) ic.lookup("java:/cinemadb");
             connection = dataSource.getConnection();
@@ -360,7 +392,6 @@ public class MySQLService {
 
     public static void deleteFilmsFromDB(Film film) {
         try {
-            authorize = false;
             ic = new InitialContext();
             dataSource = (DataSource) ic.lookup("java:/cinemadb");
             connection = dataSource.getConnection();
@@ -380,5 +411,60 @@ public class MySQLService {
                     se.printStackTrace();
                 }
         }
+    }
+
+    public static void addGenresToDB() {
+        try {
+            ic = new InitialContext();
+            dataSource = (DataSource) ic.lookup("java:/cinemadb");
+            connection = dataSource.getConnection();
+            String [] genres = new String[] {"Аниме", "Биография", "Боевик", "Вестерн", "Военный", "Детектив", "Детский", "Для взрослых", "Документальный",
+            "Драма", "Игра", "История", "Комедия", "Концерт", "Короткометражка", "Криминал", "Мелодрама", "Музыка", "Мультфильм", "Мюзикл", "Новости",
+            "Приключения", "Реальное ТВ", "Семейный", "Спорт", "Ток ШОУ", "Триллер", "Ужасы", "Фантастика", "Фильм-нуар", "Фэнтэзи", "Церемония"};
+            for(String genre : genres) {
+                PreparedStatement insertPs = connection.prepareStatement("INSERT INTO genre VALUES (NULL, ? )");
+                insertPs.setString(1, genre);
+                insertPs.executeUpdate();
+            }
+        } catch (NamingException ne) {
+            ne.printStackTrace();
+        } catch (SQLException se) {
+            se.printStackTrace();
+        } finally {
+            if (connection != null)
+                try {
+                    connection.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+        }
+
+    }
+
+    public static int getGenreIdByName(String genreName) {
+        try {
+            ic = new InitialContext();
+            dataSource = (DataSource) ic.lookup("java:/cinemadb");
+            connection = dataSource.getConnection();
+            PreparedStatement selectPs = connection.prepareStatement("SELECT * FROM genre WHERE name = ?");
+            selectPs.setString(1, genreName);
+            rs = selectPs.executeQuery();
+            if(rs.next()) {
+                genreId = rs.getInt("ID");
+            }
+        } catch (NamingException ne) {
+            ne.printStackTrace();
+        } catch (SQLException se) {
+            se.printStackTrace();
+        } finally {
+            if (connection != null)
+                try {
+                    connection.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+                return genreId;
+        }
+
     }
 }

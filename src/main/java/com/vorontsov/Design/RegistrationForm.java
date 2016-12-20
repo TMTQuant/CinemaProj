@@ -11,6 +11,7 @@ import org.vaadin.activelink.ActiveLink;
 
 public class RegistrationForm extends GridLayout {
     private SigninForm signinForm;
+    private MainForm mainForm;
     private MyUI myUI;
     VerticalLayout formLayout = new VerticalLayout();
     private Panel mainPanel = new Panel();
@@ -54,16 +55,16 @@ public class RegistrationForm extends GridLayout {
         createAccountButton.addClickListener(new Button.ClickListener() {
              @Override
             public void buttonClick(Button.ClickEvent clickEvent) {
-                if(loginTextField.getValue().length() < 6) {
-                    Notification.show("Ошибка", "Логин должен содержать от 6 символов.", Notification.Type.WARNING_MESSAGE);
+                if(loginTextField.getValue().length() < 4) {
+                    Notification.show("Ошибка", "Логин должен содержать от 4 символов.", Notification.Type.WARNING_MESSAGE);
                     return;
                 }
                 if(MySQLService.isUserExists(loginTextField.getValue().toString())) {
                     Notification.show("Ошибка", "Такой пользователь уже зарегистрирован", Notification.Type.WARNING_MESSAGE);
                     return;
                 }
-                if(passwordPasswordField.getValue().length() < 6) {
-                    Notification.show("Ошибка", "Пароль должен содержать от 6 символов.", Notification.Type.WARNING_MESSAGE);
+                if(passwordPasswordField.getValue().length() < 4) {
+                    Notification.show("Ошибка", "Пароль должен содержать от 4 символов.", Notification.Type.WARNING_MESSAGE);
                     return;
                 }
                 if(!(passwordPasswordField.getValue().equals(repeatPasswordPasswordField.getValue()))) {
@@ -71,8 +72,9 @@ public class RegistrationForm extends GridLayout {
                     return;
                 }
                 MySQLService.createUser(loginTextField.getValue(), passwordPasswordField.getValue());
+                mainForm = new MainForm(myUI);
+                myUI.setContent(mainForm);
                 Notification.show("Успешно", "Аккаунт " + loginTextField.getValue() + " успешно зарегистрирован", Notification.Type.HUMANIZED_MESSAGE);
-
             }
         });
 

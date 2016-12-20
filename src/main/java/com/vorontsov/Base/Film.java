@@ -11,6 +11,8 @@ public class Film implements Serializable, Cloneable {
     private double rating;
     private long genreID;
 
+    private String genreName;
+
     public Long getId() {
         return id;
     }
@@ -51,6 +53,13 @@ public class Film implements Serializable, Cloneable {
     }
     public void setGenreID(long genreID) {
         this.genreID = genreID;
+    }
+
+    public String getGenreName() {
+        return genreName;
+    }
+    public void setGenreName(String genreName) {
+        this.genreName = genreName;
     }
 
     public boolean isPersisted() {

@@ -8,6 +8,7 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 import com.vorontsov.Design.SigninForm;
+import com.vorontsov.Services.MySQLService;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -21,6 +22,10 @@ public class MyUI extends UI {
     private SigninForm signinForm = new SigninForm(this);
     @Override
     protected void init(VaadinRequest vaadinRequest) {
+        if(!(MySQLService.isInstalled())) {
+            MySQLService.setup();
+            MySQLService.addGenresToDB();
+        }
         setContent(signinForm);
     }
 
