@@ -6,6 +6,7 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import com.vorontsov.Base.*;
 import com.vorontsov.MyUI;
+import com.vorontsov.Services.InternetService;
 
 import java.util.List;
 
@@ -14,8 +15,10 @@ public class MainForm extends VerticalLayout{
     private FilmService service = FilmService.getInstance();
     private Grid grid = new Grid();
     private TextField filterText = new TextField();
+    private TextField URLTextField = new TextField();
     private Button clearFilterButton = new Button(FontAwesome.TIMES);
     private Button addNewFilmButton = new Button("Add new film");
+    private Button addFromURLButton = new Button("Add film from kinopoisk");
     private EditingForm editingForm;
     private CssLayout filtering = new CssLayout();
     private ComboBox recordsOnPageComboBox = new ComboBox();
@@ -58,9 +61,14 @@ public class MainForm extends VerticalLayout{
         recordsOnPageComboBox.setNullSelectionAllowed(false);
         recordsOnPageComboBox.setValue(recordsOnPageComboBox.getItemIds().iterator().next());
 
+        HorizontalLayout addFilmLayout = new HorizontalLayout(URLTextField, addFromURLButton);
+        addFilmLayout.setSpacing(true);
+        URLTextField.setInputPrompt("URL to kinopoisk film");
+
+
         HorizontalLayout main = new HorizontalLayout();
         main.addComponents(grid, editingForm);
-        addComponents(toolBar, main, recordsLayout);
+        addComponents(toolBar, addFilmLayout, main, recordsLayout);
         main.setSpacing(true);
         main.setSizeFull();
         main.setExpandRatio(grid, 1);
@@ -84,6 +92,20 @@ public class MainForm extends VerticalLayout{
             } else {
                 Film film = (Film)event.getSelected().iterator().next();
                 editingForm.setFilm(film);
+            }
+        });
+
+        addFromURLButton.addClickListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(Button.ClickEvent clickEvent) {
+                if(!(InternetService.saveFilmFromURL(URLTextField.getValue()))) {
+                    Notification.show("Ошибка", "Неверно введен URL к фильму!", Notification.Type.ERROR_MESSAGE);
+                    return;
+                }
+                service.getDataFromDB();
+                updateList();
+                updateRecordsComboBox();
+                URLTextField.setValue("");
             }
         });
 

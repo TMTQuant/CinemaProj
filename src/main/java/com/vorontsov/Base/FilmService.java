@@ -156,7 +156,7 @@ public class FilmService {
      * Persists film in the Database
      *
      * @param f film object to save
-     * @param genreName films`s genreName to setu genreId field
+     * @param genreName films`s genreName to setup genreId field
      */
     public void saveFilmToDB(Film f, String genreName) {
         f.setGenreID(MySQLService.getGenreIdByName(genreName));
