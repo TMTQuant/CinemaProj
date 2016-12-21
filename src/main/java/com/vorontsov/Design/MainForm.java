@@ -18,12 +18,16 @@ public class MainForm extends VerticalLayout{
     private Button addNewFilmButton = new Button("Add new film");
     private EditingForm editingForm;
     private CssLayout filtering = new CssLayout();
+    private ComboBox recordsOnPageComboBox = new ComboBox();
+    public static final int RECORDS_PER_PAGE = 5;
+    Label infoRecordsLabel = new Label("На странице : " + RECORDS_PER_PAGE + ". Перейти к странице : ");
 
     public MainForm(MyUI myUI) {
         this.myUI = myUI;
         editingForm = new EditingForm(myUI, this);
-        grid.setColumns("id", "title", "genreName", "rating", "duration", "ageRestrictions");
+        grid.setColumns("title", "genreName", "rating", "duration", "ageRestrictions");
         grid.setSizeFull();
+
 
         updateList();
 
@@ -44,9 +48,19 @@ public class MainForm extends VerticalLayout{
         HorizontalLayout toolBar = new HorizontalLayout(filtering, addNewFilmButton);
         toolBar.setSpacing(true);
 
+        HorizontalLayout recordsLayout = new HorizontalLayout(infoRecordsLabel, recordsOnPageComboBox);
+        recordsLayout.setSpacing(true);
+        recordsLayout.setComponentAlignment(infoRecordsLabel, Alignment.MIDDLE_CENTER);
+
+        updateRecordsComboBox();
+
+        recordsOnPageComboBox.setTextInputAllowed(false);
+        recordsOnPageComboBox.setNullSelectionAllowed(false);
+        recordsOnPageComboBox.setValue(recordsOnPageComboBox.getItemIds().iterator().next());
+
         HorizontalLayout main = new HorizontalLayout();
         main.addComponents(grid, editingForm);
-        addComponents(toolBar, main);
+        addComponents(toolBar, main, recordsLayout);
         main.setSpacing(true);
         main.setSizeFull();
         main.setExpandRatio(grid, 1);
@@ -72,10 +86,28 @@ public class MainForm extends VerticalLayout{
                 editingForm.setFilm(film);
             }
         });
+
+        recordsOnPageComboBox.addValueChangeListener(e -> updateList());
+    }
+
+    public void updateRecordsComboBox() {
+        recordsOnPageComboBox.removeAllItems();
+        int i = 1;
+        for(i = 1; i <= service.count() / RECORDS_PER_PAGE; i++) {
+            recordsOnPageComboBox.addItem(i);
+        }
+        if((int)service.count() % RECORDS_PER_PAGE != 0)
+            recordsOnPageComboBox.addItem(i);
+        recordsOnPageComboBox.setValue(recordsOnPageComboBox.getItemIds().iterator().next());
     }
 
     public void updateList() {
-        List<Film> films = service.findAll();
+        List<Film> films;
+        if(recordsOnPageComboBox.getValue() != null) {
+            films = service.findAll(null, -RECORDS_PER_PAGE + (Integer.parseInt(recordsOnPageComboBox.getValue().toString()) * RECORDS_PER_PAGE), RECORDS_PER_PAGE);
+        } else {
+            films = service.findAll(null, 0, RECORDS_PER_PAGE);
+        }
         grid.setContainerDataSource(new BeanItemContainer<>(Film.class, films));
     }
 }

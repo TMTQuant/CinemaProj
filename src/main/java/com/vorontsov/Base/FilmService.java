@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 public class FilmService {
     private static FilmService instance;
     private static final Logger LOGGER = Logger.getLogger(FilmService.class.getName());
-
     private final HashMap<Long, Film> films = new HashMap<>();
     private static ArrayList<Genre> genres = new ArrayList<>();
     private long nextId = 0;
@@ -19,6 +18,9 @@ public class FilmService {
     private FilmService() {
     }
 
+    /**
+     * @return a reference to an example facade for Film objects.
+     */
     public static FilmService getInstance() {
         if (instance == null) {
             instance = new FilmService();
@@ -27,10 +29,21 @@ public class FilmService {
         return instance;
     }
 
+    /**
+     * @return all available Film objects.
+     */
     public synchronized List<Film> findAll() {
         return findAll(null);
     }
 
+    /**
+     * Finds all Film's that match given filter.
+     *
+     * @param stringFilter
+     *            filter that returned objects should match or null/empty string
+     *            if all objects should be returned.
+     * @return list a Film objects
+     */
     public synchronized List<Film> findAll(String stringFilter) {
         ArrayList<Film> arrayList = new ArrayList<>();
         for (Film film : films.values()) {
@@ -54,14 +67,67 @@ public class FilmService {
         return arrayList;
     }
 
+    /**
+     * Finds all Flm's that match given filter and limits the resultset.
+     *
+     * @param stringFilter
+     *            filter that returned objects should match or null/empty string
+     *            if all objects should be returned.
+     * @param start
+     *            the index of first result
+     * @param maxresults
+     *            maximum result count
+     * @return list a Film objects
+     */
+    public synchronized List<Film> findAll(String stringFilter, int start, int maxresults) {
+        ArrayList<Film> arrayList = new ArrayList<>();
+        for (Film contact : films.values()) {
+            try {
+                boolean passesFilter = (stringFilter == null || stringFilter.isEmpty())
+                        || contact.toString().toLowerCase().contains(stringFilter.toLowerCase());
+                if (passesFilter) {
+                    arrayList.add(contact.clone());
+                }
+            } catch (CloneNotSupportedException ex) {
+                Logger.getLogger(Film.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        Collections.sort(arrayList, new Comparator<Film>() {
+
+            @Override
+            public int compare(Film o1, Film o2) {
+                return (int) (o2.getId() - o1.getId());
+            }
+        });
+        int end = start + maxresults;
+        if (end > arrayList.size()) {
+            end = arrayList.size();
+        }
+        return arrayList.subList(start, end);
+    }
+
+    /**
+     * @return the amount of all films in the system
+     */
     public synchronized long count() {
         return films.size();
     }
 
+    /**
+     * Deletes a film from a system
+     *
+     * @param value the Film to be deleted
+     */
     public synchronized void delete(Film value) {
         films.remove(value.getId());
     }
 
+    /**
+     * Persists or updates film in the system. Also assigns an identifier
+     * for new Film instances.
+     *
+     * @param entry
+     */
     public synchronized void save(Film entry) {
         if (entry == null) {
             LOGGER.log(Level.SEVERE,
@@ -74,6 +140,9 @@ public class FilmService {
         films.put(entry.getId(), entry);
     }
 
+    /**
+     * @return all available Film objects from Database.
+     */
     public void getDataFromDB() {
         genres = MySQLService.getGenresFromDB();
         films.clear();
@@ -83,16 +152,36 @@ public class FilmService {
         }
     }
 
+    /**
+     * Persists film in the Database
+     *
+     * @param f film object to save
+     * @param genreName films`s genreName to setu genreId field
+     */
     public void saveFilmToDB(Film f, String genreName) {
         f.setGenreID(MySQLService.getGenreIdByName(genreName));
         MySQLService.saveFilmToDB(f);
+        save(f);
     }
 
+
+    /**
+     * Updates film in the Database
+     *
+     * @param f film object to save
+     * @param genreName films`s genreName to setu genreId field
+     */
     public void changeFilmInDB(Film f, String genreName) {
         f.setGenreID(MySQLService.getGenreIdByName(genreName));
         MySQLService.changeFilmsInDB(f);
+        save(f);
     }
 
+    /**
+     * Deletes a film from a system
+     *
+     * @param f the Film to be deleted
+     */
     public void deleteFilmFromDB(Film f) {
         MySQLService.deleteFilmsFromDB(f);
     }

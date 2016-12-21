@@ -1,8 +1,5 @@
 package com.vorontsov.Base;
 
-/**
- * Created by Филипп on 20.12.2016.
- */
 public class Genre {
     private Long id;
     private String name;

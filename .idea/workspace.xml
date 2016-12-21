@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="816128b0-b1b2-41df-b48b-efefa60f9898" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vorontsov/Base/Film.java" afterPath="$PROJECT_DIR$/src/main/java/com/vorontsov/Base/Film.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vorontsov/Base/FilmService.java" afterPath="$PROJECT_DIR$/src/main/java/com/vorontsov/Base/FilmService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vorontsov/Base/Genre.java" afterPath="$PROJECT_DIR$/src/main/java/com/vorontsov/Base/Genre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vorontsov/Design/EditingForm.java" afterPath="$PROJECT_DIR$/src/main/java/com/vorontsov/Design/EditingForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vorontsov/Design/MainForm.java" afterPath="$PROJECT_DIR$/src/main/java/com/vorontsov/Design/MainForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vorontsov/Design/RegistrationForm.java" afterPath="$PROJECT_DIR$/src/main/java/com/vorontsov/Design/RegistrationForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vorontsov/Services/MySQLService.java" afterPath="$PROJECT_DIR$/src/main/java/com/vorontsov/Services/MySQLService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,49 +23,68 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Cinema1.2" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MySQLService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Services/MySQLService.java">
+      <file leaf-file-name="MainForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Design/MainForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+            <state relative-caret-position="127">
+              <caret line="54" column="32" lean-forward="true" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1482269090351" expanded="true" signature="2529:3107" ph="CREATE TABLE... IF" />
-                <marker date="1482269090351" expanded="true" signature="3178:3645" ph="CREATE TABLE... IF" />
-                <marker date="1482269090351" expanded="true" signature="3716:3998" ph="CREATE TABLE... IF" />
-                <marker date="1482269090351" expanded="true" signature="4754:4770" ph="DROP TABLE F... " />
-                <marker date="1482269090351" expanded="true" signature="4839:4855" ph="DROP TABLE U... " />
-                <marker date="1482269090351" expanded="true" signature="4924:4940" ph="DROP TABLE G... " />
-                <marker date="1482269090351" expanded="true" signature="5709:5753" ph="INSERT INTO users... " />
-                <marker date="1482269090351" expanded="true" signature="6859:6894" ph="SELECT * FRO... users" />
-                <marker date="1482269090351" expanded="true" signature="7773:7884" ph="SELECT `Film... Films" />
-                <marker date="1482269090351" expanded="true" signature="9185:9204" ph="SELECT * FRO... genre" />
-                <marker date="1482269090351" expanded="true" signature="10222:10257" ph="SELECT * FRO... users" />
-                <marker date="1482269090351" expanded="true" signature="11354:11386" ph="SELECT * FRO... WHERE" />
-                <marker date="1482269090351" expanded="true" signature="12229:12275" ph="INSERT INTO films... " />
-                <marker date="1482269090351" expanded="true" signature="13292:13391" ph="UPDATE films... " />
-                <marker date="1482269090351" expanded="true" signature="14464:14494" ph="DELETE FROM " />
-                <marker date="1482269090351" expanded="true" signature="14475:14494" ph="UPDATE films... " />
-                <marker date="1482269090351" expanded="true" signature="15757:15792" ph="INSERT INTO genre... " />
-                <marker date="1482269090351" expanded="true" signature="16583:16608" ph="SELECT * FRO... genre" />
-                <marker date="1482269090351" expanded="true" signature="16583:16617" ph="SELECT * FRO... genre" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegistrationForm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Design/RegistrationForm.java">
+      <file leaf-file-name="EditingForm.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Design/EditingForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="73" column="50" lean-forward="false" selection-start-line="73" selection-start-column="50" selection-end-line="73" selection-end-column="50" />
-              <folding />
+            <state relative-caret-position="298">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MySQLService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Services/MySQLService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="199" column="36" lean-forward="false" selection-start-line="199" selection-start-column="36" selection-end-line="199" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1482318126583" expanded="true" signature="2434:3012" ph="CREATE TABLE... IF" />
+                <marker date="1482318126583" expanded="true" signature="3083:3550" ph="CREATE TABLE... IF" />
+                <marker date="1482318126583" expanded="true" signature="3621:3903" ph="CREATE TABLE... IF" />
+                <marker date="1482318126583" expanded="true" signature="4662:4706" ph="INSERT INTO users... " />
+                <marker date="1482318126583" expanded="true" signature="5806:5841" ph="SELECT * FRO... users" />
+                <marker date="1482318126583" expanded="true" signature="6710:6821" ph="SELECT `Film... Films" />
+                <marker date="1482318126583" expanded="true" signature="8495:8514" ph="SELECT * FRO... genre" />
+                <marker date="1482318126583" expanded="true" signature="9526:9561" ph="SELECT * FRO... users" />
+                <marker date="1482318126583" expanded="true" signature="10652:10684" ph="SELECT * FRO... WHERE" />
+                <marker date="1482318126583" expanded="true" signature="11517:11563" ph="INSERT INTO films... " />
+                <marker date="1482318126583" expanded="true" signature="12570:12669" ph="UPDATE films... " />
+                <marker date="1482318126583" expanded="true" signature="13732:13762" ph="DELETE FROM " />
+                <marker date="1482318126583" expanded="true" signature="13743:13762" ph="UPDATE films... " />
+                <marker date="1482318126583" expanded="true" signature="15015:15050" ph="INSERT INTO genre... " />
+                <marker date="1482318126583" expanded="true" signature="15855:15880" ph="SELECT * FRO... genre" />
+                <marker date="1482318126583" expanded="true" signature="15855:15889" ph="SELECT * FRO... genre" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,14 +92,20 @@
       <file leaf-file-name="FilmService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Base/FilmService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="70" column="7" lean-forward="false" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+            <state relative-caret-position="242">
+              <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#756#757#0" expanded="true" />
-                <element signature="e#792#793#0" expanded="true" />
-                <element signature="e#2795#2796#0" expanded="true" />
-                <element signature="e#2844#2845#0" expanded="true" />
+                <element signature="e#896#897#0" expanded="true" />
+                <element signature="e#932#933#0" expanded="true" />
+                <element signature="e#3309#3310#0" expanded="true" />
+                <element signature="e#3379#3380#0" expanded="true" />
+                <element signature="e#3674#3675#0" expanded="true" />
+                <element signature="e#3709#3710#0" expanded="true" />
+                <element signature="e#3862#3863#0" expanded="true" />
+                <element signature="e#3905#3906#0" expanded="true" />
+                <element signature="e#5525#5526#0" expanded="true" />
+                <element signature="e#5574#5575#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,90 +114,8 @@
       <file leaf-file-name="Film.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Base/Film.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="24" />
-              <folding>
-                <element signature="e#1234#1235#0" expanded="true" />
-                <element signature="e#1266#1267#0" expanded="true" />
-                <element signature="e#1315#1316#0" expanded="true" />
-                <element signature="e#1357#1358#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditingForm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Design/EditingForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="43" column="46" lean-forward="false" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainForm.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Design/MainForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="135" column="20" lean-forward="false" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SupportService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Services/SupportService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="55" column="5" lean-forward="false" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Genre.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Base/Genre.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-              <folding>
-                <element signature="e#165#166#0" expanded="true" />
-                <element signature="e#190#191#0" expanded="true" />
-                <element signature="e#223#224#0" expanded="true" />
-                <element signature="e#251#252#0" expanded="true" />
-                <element signature="e#282#283#0" expanded="true" />
-                <element signature="e#309#310#0" expanded="true" />
-                <element signature="e#348#349#0" expanded="true" />
-                <element signature="e#380#381#0" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-                <element signature="e#453#454#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/MyUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+            <state relative-caret-position="289">
+              <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -190,8 +139,12 @@
       <find>getDa</find>
       <find>save</find>
       <find>fromD</find>
-      <find>getF</find>
       <find>getData</find>
+      <find>getF</find>
+      <find>genreId</find>
+      <find>films</find>
+      <find>genres</find>
+      <find>addnew</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -211,14 +164,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Design/SigninForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Services/SupportService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/MyUI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Base/Film.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Base/Genre.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Design/RegistrationForm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Design/EditingForm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Services/MySQLService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Base/FilmService.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Design/RegistrationForm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Base/Genre.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Base/Film.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Base/FilmService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Design/MainForm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Services/MySQLService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vorontsov/Design/EditingForm.java" />
       </list>
     </option>
   </component>
@@ -227,6 +180,34 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Cinema1.2" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Cinema1.2" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -259,20 +240,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Cinema1.2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cinema1.2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cinema1.2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -443,7 +410,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="extract.method.default.visibility" value="private" />
+    <property name="extract.method.default.visibility" value="public" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
@@ -919,10 +886,35 @@
       </MavenSettings>
       <method />
     </configuration>
-    <list size="3">
+    <configuration default="false" name="Undeploy" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="wildfly:undeploy" />
+              </list>
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Maven.pRun" />
       <item index="1" class="java.lang.String" itemvalue="Maven.cpDeploy" />
       <item index="2" class="java.lang.String" itemvalue="Maven.Deploy" />
+      <item index="3" class="java.lang.String" itemvalue="Maven.Undeploy" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -935,7 +927,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1482142530050</updated>
-      <workItem from="1482142533531" duration="50097000" />
+      <workItem from="1482142533531" duration="63277000" />
     </task>
     <task id="LOCAL-00001" summary="Версия проекта до подключения к Git">
       <created>1482234834861</created>
@@ -958,11 +950,18 @@
       <option name="project" value="LOCAL" />
       <updated>1482269853281</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Деплой на локальный сервер">
+      <created>1482272304589</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1482272304589</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50097000" />
+    <option name="totallyTimeSpent" value="63277000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -971,11 +970,11 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.50319827" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1031,7 +1030,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Версия проекта до подключения к Git" />
     <MESSAGE value="Добавление загрузки GenreName, добавление ComboBox" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление загрузки GenreName, добавление ComboBox" />
+    <MESSAGE value="Деплой на локальный сервер" />
+    <option name="LAST_COMMIT_MESSAGE" value="Деплой на локальный сервер" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1088,29 +1088,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="117" column="31" lean-forward="true" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="68">
+            <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Base/Genre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="e#165#166#0" expanded="true" />
-            <element signature="e#190#191#0" expanded="true" />
-            <element signature="e#223#224#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#282#283#0" expanded="true" />
-            <element signature="e#309#310#0" expanded="true" />
-            <element signature="e#348#349#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#121#122#0" expanded="true" />
+            <element signature="e#146#147#0" expanded="true" />
+            <element signature="e#179#180#0" expanded="true" />
+            <element signature="e#207#208#0" expanded="true" />
+            <element signature="e#238#239#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Services/SupportService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="55" column="5" lean-forward="false" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        <state relative-caret-position="599">
+          <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1119,90 +1138,99 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Design/RegistrationForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="73" column="50" lean-forward="false" selection-start-line="73" selection-start-column="50" selection-end-line="73" selection-end-column="50" />
+        <state relative-caret-position="-574">
+          <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Services/MySQLService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.7.6/vaadin-server-7.7.6.jar!/com/vaadin/ui/AbstractField.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+        <state relative-caret-position="197">
+          <caret line="635" column="16" lean-forward="false" selection-start-line="635" selection-start-column="16" selection-end-line="635" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1482269090351" expanded="true" signature="2529:3107" ph="CREATE TABLE... IF" />
-            <marker date="1482269090351" expanded="true" signature="3178:3645" ph="CREATE TABLE... IF" />
-            <marker date="1482269090351" expanded="true" signature="3716:3998" ph="CREATE TABLE... IF" />
-            <marker date="1482269090351" expanded="true" signature="4754:4770" ph="DROP TABLE F... " />
-            <marker date="1482269090351" expanded="true" signature="4839:4855" ph="DROP TABLE U... " />
-            <marker date="1482269090351" expanded="true" signature="4924:4940" ph="DROP TABLE G... " />
-            <marker date="1482269090351" expanded="true" signature="5709:5753" ph="INSERT INTO users... " />
-            <marker date="1482269090351" expanded="true" signature="6859:6894" ph="SELECT * FRO... users" />
-            <marker date="1482269090351" expanded="true" signature="7773:7884" ph="SELECT `Film... Films" />
-            <marker date="1482269090351" expanded="true" signature="9185:9204" ph="SELECT * FRO... genre" />
-            <marker date="1482269090351" expanded="true" signature="10222:10257" ph="SELECT * FRO... users" />
-            <marker date="1482269090351" expanded="true" signature="11354:11386" ph="SELECT * FRO... WHERE" />
-            <marker date="1482269090351" expanded="true" signature="12229:12275" ph="INSERT INTO films... " />
-            <marker date="1482269090351" expanded="true" signature="13292:13391" ph="UPDATE films... " />
-            <marker date="1482269090351" expanded="true" signature="14464:14494" ph="DELETE FROM " />
-            <marker date="1482269090351" expanded="true" signature="14475:14494" ph="UPDATE films... " />
-            <marker date="1482269090351" expanded="true" signature="15757:15792" ph="INSERT INTO genre... " />
-            <marker date="1482269090351" expanded="true" signature="16583:16608" ph="SELECT * FRO... genre" />
-            <marker date="1482269090351" expanded="true" signature="16583:16617" ph="SELECT * FRO... genre" />
+            <element signature="e#22296#22297#0" expanded="true" />
+            <element signature="e#22339#22340#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.7.6/vaadin-server-7.7.6.jar!/com/vaadin/ui/AbstractSelect.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="420" column="19" lean-forward="false" selection-start-line="420" selection-start-column="19" selection-end-line="420" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Base/FilmService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="70" column="7" lean-forward="false" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+        <state relative-caret-position="242">
+          <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
-            <element signature="e#2795#2796#0" expanded="true" />
-            <element signature="e#2844#2845#0" expanded="true" />
+            <element signature="e#896#897#0" expanded="true" />
+            <element signature="e#932#933#0" expanded="true" />
+            <element signature="e#3309#3310#0" expanded="true" />
+            <element signature="e#3379#3380#0" expanded="true" />
+            <element signature="e#3674#3675#0" expanded="true" />
+            <element signature="e#3709#3710#0" expanded="true" />
+            <element signature="e#3862#3863#0" expanded="true" />
+            <element signature="e#3905#3906#0" expanded="true" />
+            <element signature="e#5525#5526#0" expanded="true" />
+            <element signature="e#5574#5575#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Base/Film.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="24" />
+        <state relative-caret-position="289">
+          <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Services/MySQLService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="199" column="36" lean-forward="false" selection-start-line="199" selection-start-column="36" selection-end-line="199" selection-end-column="36" />
           <folding>
-            <element signature="e#1234#1235#0" expanded="true" />
-            <element signature="e#1266#1267#0" expanded="true" />
-            <element signature="e#1315#1316#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <marker date="1482318126583" expanded="true" signature="2434:3012" ph="CREATE TABLE... IF" />
+            <marker date="1482318126583" expanded="true" signature="3083:3550" ph="CREATE TABLE... IF" />
+            <marker date="1482318126583" expanded="true" signature="3621:3903" ph="CREATE TABLE... IF" />
+            <marker date="1482318126583" expanded="true" signature="4662:4706" ph="INSERT INTO users... " />
+            <marker date="1482318126583" expanded="true" signature="5806:5841" ph="SELECT * FRO... users" />
+            <marker date="1482318126583" expanded="true" signature="6710:6821" ph="SELECT `Film... Films" />
+            <marker date="1482318126583" expanded="true" signature="8495:8514" ph="SELECT * FRO... genre" />
+            <marker date="1482318126583" expanded="true" signature="9526:9561" ph="SELECT * FRO... users" />
+            <marker date="1482318126583" expanded="true" signature="10652:10684" ph="SELECT * FRO... WHERE" />
+            <marker date="1482318126583" expanded="true" signature="11517:11563" ph="INSERT INTO films... " />
+            <marker date="1482318126583" expanded="true" signature="12570:12669" ph="UPDATE films... " />
+            <marker date="1482318126583" expanded="true" signature="13732:13762" ph="DELETE FROM " />
+            <marker date="1482318126583" expanded="true" signature="13743:13762" ph="UPDATE films... " />
+            <marker date="1482318126583" expanded="true" signature="15015:15050" ph="INSERT INTO genre... " />
+            <marker date="1482318126583" expanded="true" signature="15855:15880" ph="SELECT * FRO... genre" />
+            <marker date="1482318126583" expanded="true" signature="15855:15889" ph="SELECT * FRO... genre" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Design/EditingForm.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Design/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="43" column="46" lean-forward="false" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+        <state relative-caret-position="127">
+          <caret line="54" column="32" lean-forward="true" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Design/EditingForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="135" column="20" lean-forward="false" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vorontsov/Design/MainForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="298">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

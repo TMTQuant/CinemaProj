@@ -2,7 +2,6 @@ package com.vorontsov.Design;
 
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.event.ShortcutAction;
-import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import com.vorontsov.Base.Film;
@@ -17,16 +16,15 @@ public class EditingForm extends FormLayout {
     private TextField title = new TextField("Title");
     private TextField duration = new TextField("Duration");
     private TextField ageRestrictions = new TextField("ageRestrictions");
-    private TextField genreId = new TextField("Genre id");
-    private ComboBox genreNames = new ComboBox("Genre name :");
+    private ComboBox genreName = new ComboBox("Genre name :");
     private  TextField rating = new TextField("Rating");
     private Button saveButton = new Button("Save");
     private Button deleteButton = new Button("Delete");
-
-    private FilmService service = FilmService.getInstance();
-    private Film film;
     private MyUI myUI;
     private MainForm mainForm;
+    private Film film;
+    private FilmService service = FilmService.getInstance();
+
 
     public EditingForm(MyUI myUI, MainForm mainForm) {
         this.myUI = myUI;
@@ -38,17 +36,16 @@ public class EditingForm extends FormLayout {
         ArrayList<Genre> genres = new ArrayList<>();
         genres = MySQLService.getGenresFromDB();
         for(Genre g : genres) {
-            genreNames.addItem(g.getName());
+            genreName.addItem(g.getName());
         }
-        genreNames.setInputPrompt("No genre selected");
-        genreNames.setTextInputAllowed(false);
-        genreNames.select(10);
+        genreName.setInputPrompt("No genre selected");
+        genreName.setTextInputAllowed(false);
+        genreName.select(10);
 
         setSizeUndefined();
         HorizontalLayout buttons = new HorizontalLayout(saveButton, deleteButton);
         buttons.setSpacing(true);
-        addComponents(title, duration, ageRestrictions, genreNames, rating, buttons);
-        // genre id delete from addComponents
+        addComponents(title, duration, ageRestrictions, genreName, rating, buttons);
 
         saveButton.addClickListener(e -> save());
         deleteButton.addClickListener(e -> delete());
@@ -56,18 +53,23 @@ public class EditingForm extends FormLayout {
 
     public void setFilm(Film film) {
         this.film = film;
-        genreNames.select(film.getGenreID());
+        genreName.setValue(0);
         BeanFieldGroup.bindFieldsUnbuffered(film, this);
+        if(title.getValue() == null)
+            title.setValue("");
         deleteButton.setVisible(film.isPersisted());
         setVisible(true);
         title.selectAll();
     }
 
     private void save() {
-        if(genreNames.getValue() != null) {
+        if(genreName.getValue() != null) {
             if (MySQLService.isFilmExists(film.getId())) {
-                service.changeFilmInDB(film, genreNames.getValue().toString());
-            } else service.saveFilmToDB(film, genreNames.getValue().toString());
+                service.changeFilmInDB(film, genreName.getValue().toString());
+            } else {
+                service.saveFilmToDB(film, genreName.getValue().toString());
+                mainForm.updateRecordsComboBox();
+            }
             service.getDataFromDB();
             mainForm.updateList();
             setVisible(false);
@@ -81,6 +83,7 @@ public class EditingForm extends FormLayout {
         }
         service.getDataFromDB();
         mainForm.updateList();
+        mainForm.updateRecordsComboBox();
         setVisible(false);
     }
 }

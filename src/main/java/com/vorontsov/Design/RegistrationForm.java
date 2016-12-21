@@ -59,7 +59,7 @@ public class RegistrationForm extends GridLayout {
                     Notification.show("Ошибка", "Логин должен содержать от 4 символов.", Notification.Type.WARNING_MESSAGE);
                     return;
                 }
-                if(MySQLService.isUserExists(loginTextField.getValue().toString())) {
+                if(MySQLService.isUserExists(loginTextField.getValue())) {
                     Notification.show("Ошибка", "Такой пользователь уже зарегистрирован", Notification.Type.WARNING_MESSAGE);
                     return;
                 }
