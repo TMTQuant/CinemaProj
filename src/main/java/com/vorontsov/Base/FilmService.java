@@ -103,6 +103,9 @@ public class FilmService {
         if (end > arrayList.size()) {
             end = arrayList.size();
         }
+        if(start > end) {
+            start = end;
+        }
         return arrayList.subList(start, end);
     }
 

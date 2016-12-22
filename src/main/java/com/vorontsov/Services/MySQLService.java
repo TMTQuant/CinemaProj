@@ -194,16 +194,6 @@ public class MySQLService {
                 film.setGenreName(rs.getString("GenreName"));
                 films.add(film);
             }
-            if(films.size() == 0) {
-                Film film = new Film();
-                film.setTitle("Бойцовский клуб");
-                film.setDuration(131);
-                film.setAgeRestrictions(18);
-                film.setRating(8.661);
-                film.setGenreID(27);
-                MySQLService.saveFilmToDB(film);
-                getFilmsFromDB();
-            }
 
         } catch (NamingException ne) {
             ne.printStackTrace();

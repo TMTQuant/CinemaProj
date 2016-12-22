@@ -34,7 +34,7 @@ public class RegistrationForm extends GridLayout {
         loginTextField.setIcon(FontAwesome.USER);
         loginTextField.setStyleName("inline-icon");
         loginTextField.setMaxLength(12);
-        passwordPasswordField.setInputPrompt("6-12 symbols");
+        passwordPasswordField.setInputPrompt("4-12 symbols");
         passwordPasswordField.setIcon(FontAwesome.LOCK);
         passwordPasswordField.setStyleName("inline-icon");
         passwordPasswordField.setMaxLength(12);

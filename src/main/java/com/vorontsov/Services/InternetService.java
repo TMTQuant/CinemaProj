@@ -26,8 +26,12 @@ public class InternetService {
             genreName = genreName.split(",")[0].substring(0, 1).toUpperCase() + genreName.split(",")[0].substring(1);
 
             ageRestrictionsS = doc.select(".ratePopup span").text();
-            ageRestrictionsS = ageRestrictionsS.split(" ")[2];
-            ageRestrictions = Integer.parseInt(ageRestrictionsS);
+            if(ageRestrictionsS.split(" ")[1].equals("любой")) {
+                ageRestrictions = 0;
+            } else {
+                ageRestrictionsS = ageRestrictionsS.split(" ")[2];
+                ageRestrictions = Integer.parseInt(ageRestrictionsS);
+            }
 
             ratingS = doc.select("#block_rating").text();
             ratingS = ratingS.split(" ")[0];
@@ -38,7 +42,6 @@ public class InternetService {
             duration = Integer.parseInt(durationS);
         }
         catch(IOException ex){
-            ex.printStackTrace();
             return false;
         }
 
