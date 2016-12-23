@@ -4,9 +4,7 @@ import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.event.ShortcutAction;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
-import com.vorontsov.Base.Film;
-import com.vorontsov.Base.FilmService;
-import com.vorontsov.Base.Genre;
+import com.vorontsov.Base.*;
 import com.vorontsov.MyUI;
 import com.vorontsov.Services.MySQLService;
 
@@ -17,24 +15,20 @@ public class EditingForm extends FormLayout {
     private TextField duration = new TextField("Duration");
     private TextField ageRestrictions = new TextField("ageRestrictions");
     private ComboBox genreName = new ComboBox("Genre name :");
-    private  TextField rating = new TextField("Rating");
-    private Button saveButton = new Button("Save");
-    private Button deleteButton = new Button("Delete");
+    private TextField rating = new TextField("Rating");
+    private Button save = new Button("Save");
+    private Button delete = new Button("Delete");
     private MyUI myUI;
-    private MainForm mainForm;
+    private MainForm main;
     private Film film;
     private FilmService service = FilmService.getInstance();
 
 
-    public EditingForm(MyUI myUI, MainForm mainForm) {
+    public EditingForm(MyUI myUI, MainForm main) {
         this.myUI = myUI;
-        this.mainForm = mainForm;
+        this.main = main;
 
-        saveButton.setStyleName(ValoTheme.BUTTON_PRIMARY);
-        saveButton.setClickShortcut(ShortcutAction.KeyCode.ENTER);
-
-        ArrayList<Genre> genres = new ArrayList<>();
-        genres = MySQLService.getGenresFromDB();
+        ArrayList<Genre> genres = MySQLService.getGenresFromDB();
         for(Genre g : genres) {
             genreName.addItem(g.getName());
         }
@@ -42,48 +36,64 @@ public class EditingForm extends FormLayout {
         genreName.setTextInputAllowed(false);
         genreName.select(10);
 
-        setSizeUndefined();
-        HorizontalLayout buttons = new HorizontalLayout(saveButton, deleteButton);
+        save.setStyleName(ValoTheme.BUTTON_PRIMARY);
+        save.setClickShortcut(ShortcutAction.KeyCode.ENTER);
+        save.addClickListener(e -> {
+            if(genreName.getValue() == null) {
+                Notification.show("Ошибка", "Выберите жанр", Notification.Type.ERROR_MESSAGE);
+                return;
+            }
+            save();
+        });
+        delete.addClickListener(e -> delete());
+        HorizontalLayout buttons = new HorizontalLayout(save, delete);
         buttons.setSpacing(true);
-        addComponents(title, duration, ageRestrictions, genreName, rating, buttons);
 
-        saveButton.addClickListener(e -> save());
-        deleteButton.addClickListener(e -> delete());
+        setSizeUndefined();
+        addComponents(title, duration, ageRestrictions, genreName, rating, buttons);
     }
 
+    /*
+     * Load Film fields values to editing fields in form
+     */
     public void setFilm(Film film) {
         this.film = film;
-        genreName.setValue(0);
         BeanFieldGroup.bindFieldsUnbuffered(film, this);
         if(title.getValue() == null)
             title.setValue("");
-        deleteButton.setVisible(film.isPersisted());
+        delete.setVisible(film.isPersisted());
         setVisible(true);
         title.selectAll();
     }
 
+    /**
+     * If film exists in database - change values and update list
+     * If film new to database - insert new record to database, update list and recordsComboBox
+     * After that editing form disappears.
+     */
     private void save() {
-        if(genreName.getValue() != null) {
-            if (MySQLService.isFilmExists(film.getId())) {
-                service.changeFilmInDB(film, genreName.getValue().toString());
-            } else {
-                service.saveFilmToDB(film, genreName.getValue().toString());
-                mainForm.updateRecordsComboBox();
-            }
-            service.getDataFromDB();
-            mainForm.updateList();
-            setVisible(false);
+        if (MySQLService.isFilmExists(film.getId())) {
+            service.changeFilmInDB(film, genreName.getValue().toString());
+        } else {
+            service.saveFilmToDB(film, genreName.getValue().toString());
+            main.updateRecordsComboBox();
         }
-        else Notification.show("Ошибка", "Выберите жанр", Notification.Type.ERROR_MESSAGE);
+        service.getDataFromDB();
+        main.updateList();
+        setVisible(false);
     }
 
+    /**
+     * If film exists in database - delete record from database, update list and recordsComboBox
+     * After that editing form disappears.
+     */
     private void delete() {
         if(MySQLService.isFilmExists(film.getId())) {
             service.deleteFilmFromDB(film);
         }
         service.getDataFromDB();
-        mainForm.updateList();
-        mainForm.updateRecordsComboBox();
+        main.updateList();
+        main.updateRecordsComboBox();
         setVisible(false);
     }
 }

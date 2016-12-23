@@ -51,37 +51,29 @@ public class RegistrationForm extends GridLayout {
                 myUI.setContent(signinForm);
             }
         });
-
-        createAccountButton.addClickListener(new Button.ClickListener() {
-             @Override
-            public void buttonClick(Button.ClickEvent clickEvent) {
-                if(loginTextField.getValue().length() < 4) {
-                    Notification.show("Ошибка", "Логин должен содержать от 4 символов.", Notification.Type.WARNING_MESSAGE);
-                    return;
-                }
-                if(MySQLService.isUserExists(loginTextField.getValue())) {
-                    Notification.show("Ошибка", "Такой пользователь уже зарегистрирован", Notification.Type.WARNING_MESSAGE);
-                    return;
-                }
-                if(passwordPasswordField.getValue().length() < 4) {
-                    Notification.show("Ошибка", "Пароль должен содержать от 4 символов.", Notification.Type.WARNING_MESSAGE);
-                    return;
-                }
-                if(!(passwordPasswordField.getValue().equals(repeatPasswordPasswordField.getValue()))) {
-                    Notification.show("Ошибка", "Пароли не совпадают", Notification.Type.WARNING_MESSAGE);
-                    return;
-                }
-                MySQLService.createUser(loginTextField.getValue(), passwordPasswordField.getValue());
-                mainForm = new MainForm(myUI);
-                myUI.setContent(mainForm);
-                Notification.show("Успешно", "Аккаунт " + loginTextField.getValue() + " успешно зарегистрирован", Notification.Type.HUMANIZED_MESSAGE);
+        createAccountButton.addClickListener(e -> {
+            if(loginTextField.getValue().length() < 4) {
+                Notification.show("Ошибка", "Логин должен содержать от 4 символов.", Notification.Type.WARNING_MESSAGE);
+                return;
             }
+            if(MySQLService.isUserExists(loginTextField.getValue())) {
+                Notification.show("Ошибка", "Такой пользователь уже зарегистрирован", Notification.Type.WARNING_MESSAGE);
+                return;
+            }
+            if(passwordPasswordField.getValue().length() < 4) {
+                Notification.show("Ошибка", "Пароль должен содержать от 4 символов.", Notification.Type.WARNING_MESSAGE);
+                return;
+            }
+            if(!(passwordPasswordField.getValue().equals(repeatPasswordPasswordField.getValue()))) {
+                Notification.show("Ошибка", "Пароли не совпадают", Notification.Type.WARNING_MESSAGE);
+                return;
+            }
+            MySQLService.createUser(loginTextField.getValue(), passwordPasswordField.getValue());
+            mainForm = new MainForm(myUI);
+            myUI.setContent(mainForm);
+            Notification.show("Успешно", "Аккаунт " + loginTextField.getValue() + " успешно зарегистрирован", Notification.Type.HUMANIZED_MESSAGE);
         });
 
-        addComponent(mainPanel);
-        setComponentAlignment(mainPanel, Alignment.MIDDLE_CENTER);
-        setRows(2);
-        setSizeFull();
         formLayout.addComponents(cbImage, registerLabel, loginTextField, passwordPasswordField, repeatPasswordPasswordField, createAccountButton, infoLayout);
         formLayout.setComponentAlignment(infoLayout, Alignment.MIDDLE_CENTER);
         formLayout.setComponentAlignment(cbImage, Alignment.MIDDLE_CENTER);
@@ -93,5 +85,10 @@ public class RegistrationForm extends GridLayout {
 
         mainPanel.setWidth(null);
         mainPanel.setContent(formLayout);
+
+        addComponent(mainPanel);
+        setComponentAlignment(mainPanel, Alignment.MIDDLE_CENTER);
+        setRows(2);
+        setSizeFull();
     }
 }

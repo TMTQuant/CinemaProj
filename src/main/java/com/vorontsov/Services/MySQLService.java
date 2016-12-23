@@ -21,7 +21,12 @@ public class MySQLService {
     private static ArrayList<Genre> genres;
     private static final String dbname = "java:/cinemadb";
 
-
+    /**
+    Verify if base was already installed.
+    Find tables users, films, genre
+    @return true if all 3 tables are in use
+    @return false if any of 3 tables are not created yet;
+     */
     public static boolean isInstalled() {
         boolean installed = false;
         try {
@@ -67,6 +72,9 @@ public class MySQLService {
         }
     }
 
+    /**
+    Create tables if not exists Films, Users, Genre
+     */
     public static void setup() {
         try {
             ic = new InitialContext();
@@ -117,6 +125,11 @@ public class MySQLService {
         }
     }
 
+    /**
+    Create user with some password protection; Password as it is not inserted in database values, only encrypted string;
+    @param username Username
+     @param password password that will be encrypted
+     */
     public static void createUser(String username, String password) {
         try {
             ic = new InitialContext();
@@ -148,6 +161,12 @@ public class MySQLService {
         }
     }
 
+    /**
+    Verify if user exists
+    @param username username
+     @return true if such user already in table Users
+     @return false if not
+     */
     public static boolean isUserExists(String username) {
         boolean haveUser = false;
         try {
@@ -175,6 +194,11 @@ public class MySQLService {
         }
     }
 
+    /**
+     * Method to get Films into ArrayList from table Films
+     * Also get film`s genre name by genre id value;
+     * @return list of films from table films
+     */
     public static ArrayList<Film> getFilmsFromDB() {
         try {
             films = new ArrayList();
@@ -210,6 +234,10 @@ public class MySQLService {
         }
     }
 
+    /**
+     * Method to get Genres into ArrayList from table genre
+     * @return list of genres from table genre
+     */
     public static ArrayList<Genre> getGenresFromDB() {
         try {
             genres = new ArrayList();
@@ -240,6 +268,13 @@ public class MySQLService {
         }
     }
 
+    /**
+     *
+     * @param username user login
+     * @param password user passwod
+     * @return true if user with such username and password already in table users
+     * @return false if not
+     */
     public static boolean tryAuthorize(String username, String password) {
         boolean authorize = false;
         try {
@@ -273,6 +308,12 @@ public class MySQLService {
         }
     }
 
+    /**
+     * verify if film with such id already in table Films
+     * @param id Film Id to be verified
+     * @return true if film with such id already in table Films
+     * @return false if not
+     */
     public static boolean isFilmExists(Long id) {
         boolean haveFilm = false;
         try {
@@ -300,6 +341,10 @@ public class MySQLService {
         }
     }
 
+    /**
+     * Save film to table Films
+     * @param film film to be saved
+     */
     public static void saveFilmToDB(Film film) {
         try {
             ic = new InitialContext();
@@ -327,6 +372,10 @@ public class MySQLService {
         }
     }
 
+    /**
+     * Change film parametres in table Films
+     * @param film to be changed
+     */
     public static void changeFilmsInDB(Film film) {
         try {
             ic = new InitialContext();
@@ -355,6 +404,10 @@ public class MySQLService {
         }
     }
 
+    /**
+     * Delete film from table Films
+     * @param film to be deleted
+     */
     public static void deleteFilmsFromDB(Film film) {
         try {
             ic = new InitialContext();
@@ -378,6 +431,9 @@ public class MySQLService {
         }
     }
 
+    /**
+     * Add genre names from kinopoisk to table genre
+     */
     public static void addGenresToDB() {
         try {
             ic = new InitialContext();
@@ -405,6 +461,11 @@ public class MySQLService {
         }
     }
 
+    /**
+     * Method to get genreId by genreName
+     * @param genreName genre name to know genre id
+     * @return genre id value what matches genre name
+     */
     public static int getGenreIdByName(String genreName) {
         int genreId = 0;
         try {

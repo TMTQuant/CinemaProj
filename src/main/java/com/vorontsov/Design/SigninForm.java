@@ -7,9 +7,6 @@ import com.vorontsov.MyUI;
 import com.vorontsov.Services.MySQLService;
 import org.vaadin.activelink.ActiveLink;
 
-/**
- * Created by Филипп on 19.12.2016.
- */
 public class SigninForm extends GridLayout {
     private RegistrationForm registrationForm;
     private MainForm mainForm;
@@ -48,21 +45,14 @@ public class SigninForm extends GridLayout {
                 myUI.setContent(registrationForm);
             }
         });
-
-        signinButton.addClickListener(new Button.ClickListener() {
-            @Override
-            public void buttonClick(Button.ClickEvent clickEvent) {
-                if(MySQLService.tryAuthorize(loginTextField.getValue(), passwordPasswordFiled.getValue())) {
-                    mainForm = new MainForm(myUI);
-                    myUI.setContent(mainForm);
-                } else Notification.show("Ошибка", "Неверный логин и/или пароль", Notification.Type.ERROR_MESSAGE);
+        signinButton.addClickListener(e -> {
+            if(MySQLService.tryAuthorize(loginTextField.getValue(), passwordPasswordFiled.getValue())) {
+                mainForm = new MainForm(myUI);
+                myUI.setContent(mainForm);
             }
+            else Notification.show("Ошибка", "Неверный логин и/или пароль", Notification.Type.ERROR_MESSAGE);
         });
 
-        addComponent(mainPanel);
-        setComponentAlignment(mainPanel, Alignment.MIDDLE_CENTER);
-        setRows(2);
-        setSizeFull();
         formLayout.addComponents(cbImage, welcomeLabel, activitiesLayout, infoLayout);
         formLayout.setComponentAlignment(cbImage, Alignment.MIDDLE_CENTER);
         formLayout.setMargin(true);
@@ -75,5 +65,10 @@ public class SigninForm extends GridLayout {
 
         mainPanel.setWidth(null);
         mainPanel.setContent(formLayout);
+
+        addComponent(mainPanel);
+        setComponentAlignment(mainPanel, Alignment.MIDDLE_CENTER);
+        setRows(2);
+        setSizeFull();
     }
 }

@@ -58,9 +58,9 @@ public class Film implements Serializable, Cloneable {
     }
 
     /**
-     * Get the value of age restrictions
+     * Get the value of ageRestrictions
      *
-     * @return the value of age restrictions
+     * @return the value of ageRestrictions
      */
     public int getAgeRestrictions() {
         return ageRestrictions;

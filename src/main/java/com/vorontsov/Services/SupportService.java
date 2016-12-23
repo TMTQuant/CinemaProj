@@ -6,21 +6,28 @@ import java.net.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * Created by Филипп on 19.12.2016.
- */
 public class SupportService {
+    /**
+     * Generates random String object 20 symbols length
+     * @return random String 20 syblols length
+     */
     public static String generateSaltString()
     {
         String symbols = "qwertyuiopasdfghjklzxcvbnm";
         StringBuilder salt = new StringBuilder();
-        int saltLaength = 20;
-        for(int i=0; i < saltLaength ; i++)
+        int saltLength = 20;
+
+        for(int i=0; i < saltLength ; i++)
             salt.append(symbols.charAt((int)(Math.random() * symbols.length())));
 
         return salt.toString();
     }
 
+    /**
+     * Encodes String by MD5
+     * @param input String to be encoded
+     * @return String encoded by MD5
+     */
     public static String getMD5(String input) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -35,23 +42,5 @@ public class SupportService {
         catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static String getContentOfHTTPPage(String pageAddress, String codePage) throws Exception {
-        StringBuilder sb = new StringBuilder();
-        URL pageURL = new URL(pageAddress);
-        URLConnection uc = pageURL.openConnection();
-        BufferedReader br = new BufferedReader(
-                new InputStreamReader(
-                        uc.getInputStream(), codePage));
-        try {
-            String inputLine;
-            while ((inputLine = br.readLine()) != null) {
-                sb.append(inputLine);
-            }
-        } finally {
-            br.close();
-        }
-        return sb.toString();
     }
 }

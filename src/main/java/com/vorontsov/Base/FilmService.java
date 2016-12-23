@@ -144,7 +144,7 @@ public class FilmService {
     }
 
     /**
-     * @return all available Film objects from Database.
+     * Add all avalible films from database to films
      */
     public void getDataFromDB() {
         genres = MySQLService.getGenresFromDB();
@@ -172,7 +172,7 @@ public class FilmService {
      * Updates film in the Database
      *
      * @param f film object to save
-     * @param genreName films`s genreName to setu genreId field
+     * @param genreName films`s genreName to setup genreId field
      */
     public void changeFilmInDB(Film f, String genreName) {
         f.setGenreID(MySQLService.getGenreIdByName(genreName));
