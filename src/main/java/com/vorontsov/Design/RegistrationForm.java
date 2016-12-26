@@ -30,7 +30,7 @@ public class RegistrationForm extends GridLayout {
         this.myUI = myUI;
         cbImage.setSource(new ExternalResource("http://x-lines.ru/letters/i/cyrillicscript/0086/5484ed/20/0/epwsh3mpcrorramucw.png"));
         registerLabel.setStyleName("colored bold");
-        loginTextField.setInputPrompt("6-12 symbols");
+        loginTextField.setInputPrompt("4-12 symbols");
         loginTextField.setIcon(FontAwesome.USER);
         loginTextField.setStyleName("inline-icon");
         loginTextField.setMaxLength(12);
@@ -38,7 +38,7 @@ public class RegistrationForm extends GridLayout {
         passwordPasswordField.setIcon(FontAwesome.LOCK);
         passwordPasswordField.setStyleName("inline-icon");
         passwordPasswordField.setMaxLength(12);
-        repeatPasswordPasswordField.setInputPrompt("6-12 symbols");
+        repeatPasswordPasswordField.setInputPrompt("4-12 symbols");
         repeatPasswordPasswordField.setIcon(FontAwesome.LOCK);
         repeatPasswordPasswordField.setStyleName("inline-icon");
         repeatPasswordPasswordField.setMaxLength(12);

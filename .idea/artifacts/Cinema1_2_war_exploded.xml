@@ -4,7 +4,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Cinema1.2" />
+          <element id="module-output" name="CinemaBase" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.vaadin:vaadin-server:7.7.6" />
@@ -24,8 +24,8 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/Cinema1.2-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="Cinema1.2/web/Web" />
-      <element id="gwt-compiler-output" facet="Cinema1.2/gwt/GWT" />
+      <element id="javaee-facet-resources" facet="CinemaBase/web/Web" />
+      <element id="gwt-compiler-output" facet="CinemaBase/gwt/GWT" />
     </root>
   </artifact>
 </component>

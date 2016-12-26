@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Cinema1.2" />
+        <module name="CinemaBase" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Cinema1.2" target="1.8" />
+      <module name="CinemaBase" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
